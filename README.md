@@ -20,9 +20,23 @@ Made as part of learning how x64 encoding works. Library is set out to produce s
 - `pop`
 - `ret`
 
+Features:
+
+- All `reg/mem`, `mem/reg`, `mem/i` and `reg/i` supported.
+- `REX` prefix generated only when needed.
+- Absolute addressing mode supported.
+- Relative addressing mode supported.
+- `RBP` indexing supported.
+- GCC-style `RSP` indexing supported (as long as scale is 1).
+- Always choosing the shortest byte sequence as long as the result is the same. (This will need some more testing, though.)
+
+Missing:
+
+- Opcodes working just with `RAX` with `reg/*` not supported yet.
+
 # Usage
 
-**Still under development in separate private repository for now.** Released out for people to use it early should they need it. Library is developed in my private repository and each major change is then pushed here. I'll eventually move to this repo for further development.
+**Still under development with some major changes pending.** Released out for people to use it early should they need it. Library is developed in my private repository and each major change is pushed here. I'll eventually move to this repo for further development.
 
 ```c
 // Binary
@@ -62,6 +76,16 @@ enum X64Size {
   - `X64Operand x64m(X64Reg base, X64Reg index, X64Scale scale, uint64_t displacement)`
 - Immediate (constant) operand:
   - `X64Operand x64i(uint64_t imm)`
+
+# TODO
+
+- Obviously more instructions.
+  - Priority on instructions that map to C-like language expressions (arithmetics, calls)
+  - Floating point (via SSE+).
+  - Vector operations.
+- Some API changes regarding how `size` argument is used.
+- Use proper buffer writer with user callback.
+- Use user callback for error handling.
 
 # Testing
 
