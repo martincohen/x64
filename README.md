@@ -8,6 +8,8 @@ The goal is to be able to comfortably generate x64 native code to memory and the
 
 Library is set out to produce same code as `ML64` currently, since it's the assembler used for generating tests. The `GCC` one does prefer slightly different variants of some byte encodings. I'm trying to keep track of these so I will be able to generate tests from `GCC` too.
 
+There's a writeup in my wiki about [some details of the x64 encoding](https://github.com/martincohen/Wiki/wiki/x64) here.
+
 # x64 instructions
 
 - `mov`
