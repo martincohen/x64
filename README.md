@@ -43,7 +43,7 @@ X64Inst x64_ret();
 
 Functions return `X64Inst` structure, which is just a static buffer with `.bytes` and `.count`. The structure also contains `.error` string which is set in case there was an error processing. This behavior will eventually change to a proper buffered writer and custom error handler.
 
-Where `X64Size size` denotes intent of size on the operation. In case this is not possible, error is returned.
+Where `X64Size size` denotes intent of size on the operation. In case it is not possible to satisfy the size and operands for given instruction, error is returned via `XInst.error`.
 
 ```c
 enum X64Size {
