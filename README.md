@@ -6,7 +6,7 @@ x64 assembler library in C.
 
 The goal is to be able to comfortably generate x64 native code to memory and then run it. Useful for runtime code generation, compilers, code optimizations.
 
-Library is set out to produce same code as `ML64` currently, since it's the assembler used for generating. The `GCC` one does prefer slightly different variants of some byte encodings. I'm trying to keep track of these so I might be able to generate tests from `GCC` too.
+Library is set out to produce same code as `ML64` currently, since it's the assembler used for generating tests. The `GCC` one does prefer slightly different variants of some byte encodings. I'm trying to keep track of these so I will be able to generate tests from `GCC` too.
 
 # x64 instructions
 
